@@ -36,7 +36,7 @@ Names: ru/fr Wikipedia title (reached via the Hebrew article's interlanguage lin
 | likud-6 | ישראל כץ | Исраэль Кац | Israël Katz | wiki-ru: https://ru.wikipedia.org/wiki/Кац,_Исраэль_(политик) |
 | likud-7 | גדעון סער | Гидеон Саар | Gideon Sa'ar | wiki-ru: https://ru.wikipedia.org/wiki/Саар,_Гидеон |
 | likud-8 | אופיר כץ | Офир Кац | Ofir Katz | wiki-ru: https://ru.wikipedia.org/wiki/Кац,_Офир |
-| likud-9 | טלי גואילי | Тали Гуэли | Tali Gueli | transliterated |
+| likud-9 | טלי גואילי | Тали Гвили | Tali Gvili | transliterated |
 | likud-10 | יואב קיש | Йоав Киш | Yoav Kisch | wiki-ru: https://ru.wikipedia.org/wiki/Киш,_Йоав |
 | likud-11 | יעקב ברדוגו | Яаков Бардуго | Ya'akov Bardugo | transliterated |
 | likud-12 | מכלוף זוהר | Мики Зоар | Miki Zohar | wiki-ru: https://ru.wikipedia.org/wiki/Зоар,_Мики |
@@ -53,7 +53,7 @@ Names: ru/fr Wikipedia title (reached via the Hebrew article's interlanguage lin
 | together-2 | יאיר לפיד | Яир Лапид | Yaïr Lapid | wiki-ru: https://ru.wikipedia.org/wiki/Лапид,_Яир |
 | together-3 | קרן טרנר | Керен Тернер | Keren Terner | transliterated |
 | together-4 | מירב בן ארי | Мейрав Бен-Ари | Meirav Ben-Ari | wiki-ru: https://ru.wikipedia.org/wiki/Бен-Ари,_Мейрав |
-| together-5 | לירן אבישר בן חורין | Лиран Ависар Бен-Хорин | Liran Avisar Ben-Horin | transliterated |
+| together-5 | לירן אבישר בן חורין | Лиран Авишар Бен-Хорин | Liran Avishar Ben-Horin | transliterated |
 | together-6 | נעם תיבון | Ноам Тибон | Noam Tibon | wiki-ru: https://ru.wikipedia.org/wiki/Тибон,_Ноам |
 | together-7 | מיכל הירש נגרי | Михаль Хирш Негри | Michal Hirsch Negri | transliterated |
 | together-8 | איתן גינזבורג | Эйтан Гинзбург | Eitan Ginzburg | transliterated |
@@ -165,7 +165,7 @@ Names: ru/fr Wikipedia title (reached via the Hebrew article's interlanguage lin
 | likud-6 | ישראל כץ | Исраэль Кац | Israël Katz | wiki-fr: https://fr.wikipedia.org/wiki/Israël_Katz |
 | likud-7 | גדעון סער | Гидеон Саар | Gideon Sa'ar | wiki-fr: https://fr.wikipedia.org/wiki/Gideon_Sa'ar |
 | likud-8 | אופיר כץ | Офир Кац | Ofir Katz | transliterated |
-| likud-9 | טלי גואילי | Тали Гуэли | Tali Gueli | transliterated |
+| likud-9 | טלי גואילי | Тали Гвили | Tali Gvili | transliterated |
 | likud-10 | יואב קיש | Йоав Киш | Yoav Kisch | wiki-fr: https://fr.wikipedia.org/wiki/Yoav_Kisch |
 | likud-11 | יעקב ברדוגו | Яаков Бардуго | Ya'akov Bardugo | transliterated |
 | likud-12 | מכלוף זוהר | Мики Зоар | Miki Zohar | wiki-fr: https://fr.wikipedia.org/wiki/Miki_Zohar |
@@ -182,7 +182,7 @@ Names: ru/fr Wikipedia title (reached via the Hebrew article's interlanguage lin
 | together-2 | יאיר לפיד | Яир Лапид | Yaïr Lapid | wiki-fr: https://fr.wikipedia.org/wiki/Yaïr_Lapid |
 | together-3 | קרן טרנר | Керен Тернер | Keren Terner | transliterated |
 | together-4 | מירב בן ארי | Мейрав Бен-Ари | Meirav Ben-Ari | wiki-fr: https://fr.wikipedia.org/wiki/Meirav_Ben-Ari |
-| together-5 | לירן אבישר בן חורין | Лиран Ависар Бен-Хорин | Liran Avisar Ben-Horin | transliterated |
+| together-5 | לירן אבישר בן חורין | Лиран Авишар Бен-Хорин | Liran Avishar Ben-Horin | transliterated |
 | together-6 | נעם תיבון | Ноам Тибон | Noam Tibon | transliterated |
 | together-7 | מיכל הירש נגרי | Михаль Хирш Негри | Michal Hirsch Negri | transliterated |
 | together-8 | איתן גינזבורג | Эйтан Гинзбург | Eitan Ginzburg | transliterated |
