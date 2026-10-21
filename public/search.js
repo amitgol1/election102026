@@ -3,7 +3,7 @@ const QUOTES = /["'`׳״‘’“”]/g;
 const SEPARATORS = /[\s־\-–—.,()]+/;
 
 export function normalize(s) {
-  return String(s).normalize('NFD').replace(MARKS, '').replace(QUOTES, '').replace(/וו/g, 'ו').toLowerCase().trim();
+  return String(s).normalize('NFD').replace(MARKS, '').replace(/[\u0300-\u036f]/g, '').replace(QUOTES, '').replace(/וו/g, 'ו').toLowerCase().trim();
 }
 
 export function words(s) {

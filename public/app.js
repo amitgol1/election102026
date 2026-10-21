@@ -1,22 +1,12 @@
 import { normalize, words, matches } from './search.js';
 import { renderShareImage } from './share.js';
+import { t, getLang, setLang, initialLang, dir, candName, partyLabel, roleName, roleShort, reasonText, fmtNumber, fmtPct, LANGS } from './i18n.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const el = (tag, props = {}, ...children) => {
   const node = Object.assign(document.createElement(tag), props);
   for (const c of children) if (c != null) node.append(c);
   return node;
-};
-
-const MSG = {
-  network: 'אין חיבור לשרת. בדקו את החיבור לאינטרנט ונסו שוב.',
-  rate: 'נשלחו יותר מדי הצבעות מהרשת שלכם היום. נסו שוב מחר.',
-  invalid: 'ההצבעה לא תקינה. רעננו את הדף ונסו שוב.',
-  generic: 'אירעה שגיאה. נסו שוב בעוד רגע.',
-  load: 'לא הצלחנו לטעון את הנתונים.',
-  captcha: 'אימות האבטחה נכשל. נסו לשלוח שוב.',
-  share: 'השיתוף לא הצליח. אפשר לשמור את התמונה ולשתף ידנית.',
-  captchaLoad: 'לא הצלחנו לטעון את אימות האבטחה. בדקו את החיבור ורעננו את הדף.',
 };
 
 const state = {
@@ -251,23 +241,23 @@ function avatar(c, size = '') {
   box.style.setProperty('--party', color);
   box.style.color = textOn(color);
   if (c.photo) {
-    box.append(el('img', { src: c.photo, alt: '', loading: 'lazy', decoding: 'async', onerror() { this.replaceWith(initials(c.name)); } }));
+    box.append(el('img', { src: c.photo, alt: '', loading: 'lazy', decoding: 'async', onerror() { this.replaceWith(initials(candName(c))); } }));
   } else {
-    box.textContent = initials(c.name);
+    box.textContent = initials(candName(c));
   }
   return box;
 }
 
 function partyChip(partyId) {
   const p = state.partyById.get(partyId);
-  const chip = el('span', { className: 'chip' }, el('span', { className: 'dot' }), p?.name || '');
+  const chip = el('span', { className: 'chip' }, el('span', { className: 'dot' }), partyLabel(p));
   chip.style.setProperty('--party', p?.color || '#6b7280');
   return chip;
 }
 
 function candidateBody(c, nameNode) {
   return el('span', { className: 'cand-body' },
-    el('span', { className: 'cand-name' }, nameNode || c.name),
+    el('span', { className: 'cand-name' }, nameNode || candName(c)),
     partyChip(c.partyId));
 }
 
@@ -277,8 +267,8 @@ function renderParties() {
   for (const p of state.parties) {
     const btn = el('button', { type: 'button', className: 'party-card' },
       el('span', { className: 'party-swatch' }),
-      el('span', { className: 'party-name' }, p.name),
-      p.letters ? el('span', { className: 'party-letters', title: 'אותיות הפתק' }, p.letters) : null);
+      el('span', { className: 'party-name' }, partyLabel(p)),
+      p.letters ? el('span', { className: 'party-letters', title: t('ballotLetters'), lang: 'he' }, p.letters) : null);
     btn.style.setProperty('--party', p.color);
     btn.setAttribute('role', 'radio');
     btn.setAttribute('aria-checked', String(p.id === state.partyId));
@@ -334,7 +324,7 @@ function buildCombo(role, index) {
     id: `in-${id}`,
     type: 'text',
     className: 'combo-input',
-    placeholder: 'הקלידו שם מועמד…',
+    placeholder: t('placeholder'),
     autocomplete: 'off',
     spellcheck: false,
   });
@@ -350,18 +340,18 @@ function buildCombo(role, index) {
 
   const listbox = el('ul', { id: `lb-${id}`, className: 'listbox', hidden: true });
   listbox.setAttribute('role', 'listbox');
-  listbox.setAttribute('aria-label', `מועמדים לתפקיד ${role.name}`);
+  listbox.setAttribute('aria-label', t('candidatesFor', { role: roleName(role) }));
 
   const picked = el('div', { className: 'picked', hidden: true });
   const idx = el('span', { className: 'role-idx' }, String(index + 1));
   idx.setAttribute('aria-hidden', 'true');
   const li = el('li', { className: 'role', id: `role-${id}` },
-    el('label', { className: 'role-label', htmlFor: `in-${id}` }, idx, role.name),
+    el('label', { className: 'role-label', htmlFor: `in-${id}` }, idx, roleName(role)),
     el('div', { className: 'combo' }, input, picked, listbox));
   li.dataset.role = id;
   const quick = el('div', { className: 'quick', hidden: true });
   quick.setAttribute('role', 'group');
-  quick.setAttribute('aria-label', `בחירות מהירות לתפקיד ${role.name}`);
+  quick.setAttribute('aria-label', t('quickFor', { role: roleName(role) }));
   li.append(quick);
 
   const c = { role, input, listbox, picked, li, quick, items: [], active: -1 };
@@ -413,20 +403,20 @@ function open(c) {
   const q = c.input.value;
   const nq = words(q);
   c.items = availableFor(c.role.id)
-    .filter((cand) => matches(cand._w, q))
-    .map((cand, order) => ({ cand, order, rank: nq.length && !cand._w[0].startsWith(nq[0]) ? 1 : 0 }))
+    .filter((cand) => matches(cand._w, q) || (cand._tw && matches(cand._tw, q)))
+    .map((cand, order) => ({ cand, order, rank: nq.length && !cand._w[0]?.startsWith(nq[0]) && !cand._tw?.[0]?.startsWith(nq[0]) ? 1 : 0 }))
     .sort((a, b) => a.rank - b.rank || a.order - b.order)
     .map((x) => x.cand);
   if (c.active >= c.items.length) c.active = c.items.length - 1;
   c.listbox.replaceChildren();
   if (!c.items.length) {
-    const empty = el('li', { className: 'empty' }, 'לא נמצאו מועמדים');
+    const empty = el('li', { className: 'empty' }, t('noMatches'));
     empty.setAttribute('role', 'presentation');
     c.listbox.append(empty);
   }
   c.items.forEach((cand, i) => {
     const opt = el('li', { id: `opt-${c.role.id}-${cand.id}`, className: 'option' },
-      avatar(cand), candidateBody(cand, highlight(cand.name, q)));
+      avatar(cand), candidateBody(cand, highlight(candName(cand), q)));
     opt.setAttribute('role', 'option');
     opt.setAttribute('aria-selected', String(i === c.active));
     opt.dataset.cand = cand.id;
@@ -499,7 +489,7 @@ function renderPicked(c) {
   c.picked.replaceChildren();
   if (!cand) return;
   const clear = el('button', { type: 'button', className: 'clear-btn', textContent: '×' });
-  clear.setAttribute('aria-label', `ניקוי הבחירה לתפקיד ${c.role.name}`);
+  clear.setAttribute('aria-label', t('clearFor', { role: roleName(c.role) }));
   clear.addEventListener('click', () => clearPick(c));
   c.picked.append(avatar(cand), candidateBody(cand), clear);
   c.picked.classList.remove('pop');
@@ -514,7 +504,7 @@ function updateProgress() {
   $('#progress-fill').style.transform = `scaleX(${total ? done / total : 0})`;
   $('#submit').disabled = done !== total;
   const left = total - done;
-  $('#submit-hint').textContent = left ? (left === 1 ? 'נותר תפקיד אחד' : `נותרו ${left} תפקידים`) : 'הכול מוכן!';
+  $('#submit-hint').textContent = left ? t('left', { n: left }) : t('ready');
 }
 
 function renderCabinet() {
@@ -550,10 +540,10 @@ function quickPicks(roleId) {
   };
   const popular = (Array.isArray(state.popular[roleId]) ? state.popular[roleId] : [])
     .filter((e) => usable(e?.candidateId)).slice(0, 2);
-  for (const e of popular) add(e.candidateId, `פופולרי · ${Math.round(e.pct)}%`, 'פופולרי');
+  for (const e of popular) add(e.candidateId, `${t('popular')} · ${fmtPct(e.pct, 0)}`, t('popular'));
   const curated = Array.isArray(state.suggestions[roleId]) ? state.suggestions[roleId] : [];
   for (const s of curated) {
-    const reason = typeof s?.reason === 'string' ? s.reason.trim() : '';
+    const reason = typeof s?.reason === 'string' ? reasonText(roleId, s.candidateId, s.reason).trim() : '';
     add(s?.candidateId, reason, reason);
   }
   return out;
@@ -567,10 +557,10 @@ function renderQuick(c) {
     const chip = el('button', { type: 'button', className: 'quick-chip' },
       avatar(cand, 'xs'),
       el('span', { className: 'quick-text' },
-        el('span', { className: 'quick-name' }, cand.name),
+        el('span', { className: 'quick-name' }, candName(cand)),
         label ? el('span', { className: 'quick-reason' }, label) : null));
     chip.dataset.cand = cand.id;
-    chip.setAttribute('aria-label', `בחירה מהירה: ${cand.name}${reason ? `, ${reason}` : ''}, לתפקיד ${c.role.name}`);
+    chip.setAttribute('aria-label', t('quickPick', { details: `${candName(cand)}${reason ? `, ${reason}` : ''}`, role: roleName(c.role) }));
     chip.addEventListener('click', () => choose(c, cand));
     c.quick.append(chip);
   }
@@ -586,16 +576,16 @@ async function submit(e) {
   if (btn.disabled) return;
   btn.disabled = true;
   btn.classList.add('busy');
-  btn.textContent = 'שולח…';
+  btn.textContent = t('sending');
   try {
     let turnstileToken;
     if (state.siteKey) {
       try {
         turnstileToken = await getToken();
       } catch {
-        return toast(MSG.captchaLoad);
+        return toast(t('captchaLoad'));
       }
-      if (!turnstileToken) return toast(MSG.captcha);
+      if (!turnstileToken) return toast(t('captcha'));
     }
     const { status, body } = await api('/api/vote', {
       method: 'POST',
@@ -604,14 +594,14 @@ async function submit(e) {
     if (status === 201 || status === 200) { removeTurnstile(); return showResults(); }
     if (status === 409) { removeTurnstile(); return showResults(await fetchStatus()); }
     resetTurnstile();
-    if (status === 403 && body.error === 'captcha') toast(MSG.captcha);
-    else toast(status === 429 ? MSG.rate : status === 400 ? MSG.invalid : MSG.generic);
+    if (status === 403 && body.error === 'captcha') toast(t('captcha'));
+    else toast(status === 429 ? t('rate') : status === 400 ? t('invalid') : t('generic'));
   } catch (err) {
     resetTurnstile();
-    toast(err instanceof NetError ? MSG.network : MSG.generic);
+    toast(err instanceof NetError ? t('network') : t('generic'));
   } finally {
     btn.classList.remove('busy');
-    btn.textContent = 'שליחת הנבחרת שלי';
+    btn.textContent = t('submit');
     updateProgress();
   }
 }
@@ -655,10 +645,10 @@ function plenumRoles() {
   return [...state.roles].sort((a, b) => rank(a) - rank(b));
 }
 
-const partyName = (cand) => state.partyById.get(cand.partyId)?.name || '';
+const partyName = (cand) => partyLabel(state.partyById.get(cand.partyId));
 
 function player(role, i, { cands = [], pills = [], match = false, sr }) {
-  const li = el('li', { className: `player${role.id === 'pm' ? ' pm' : ''}${cands.length > 1 ? ' tie' : ''}`, title: role.name });
+  const li = el('li', { className: `player${role.id === 'pm' ? ' pm' : ''}${cands.length > 1 ? ' tie' : ''}`, title: roleName(role) });
   li.dataset.role = role.id;
   li.style.setProperty('--i', String(i));
   seat(li, role.id);
@@ -666,12 +656,12 @@ function player(role, i, { cands = [], pills = [], match = false, sr }) {
   if (cands.length) cands.forEach((c) => avatars.append(avatar(c)));
   else avatars.append(el('span', { className: 'avatar empty' }, '—'));
   if (match) avatars.append(el('span', { className: 'player-check' }, '✓'));
-  if (role.id === 'pm') avatars.append(el('span', { className: 'gov-table' }, 'שולחן הממשלה'));
+  if (role.id === 'pm') avatars.append(el('span', { className: 'gov-table' }, t('govTable')));
   const names = el('span', { className: 'player-names' },
-    ...(cands.length ? cands.map((c) => el('span', { className: 'player-name' }, c.name)) : []));
+    ...(cands.length ? cands.map((c) => el('span', { className: 'player-name' }, candName(c))) : []));
   const parties = el('span', { className: 'player-party' }, cands.map(partyName).join(' / '));
   const vis = el('span', { className: 'player-vis' },
-    el('span', { className: 'player-role' }, SHORT[role.id] || role.name),
+    el('span', { className: 'player-role' }, roleShort(role, SHORT[role.id])),
     avatars, names, cands.length ? parties : null,
     ...pills.map(([cls, text]) => el('span', { className: `pill ${cls}` }, text)));
   vis.setAttribute('aria-hidden', 'true');
@@ -693,19 +683,18 @@ function renderMine() {
     const hit = all?.byRole?.[r.id]?.find((x) => x.candidateId === cand.id);
     list.append(player(r, i, {
       cands: [cand],
-      pills: hit ? [['agree', `${fmtPct(hit.pct)} כמוך`]] : [],
-      sr: `${r.name}: ${cand.name}, ${partyName(cand)}${hit ? `, ${fmtPct(hit.pct)} בחרו כמוך` : ''}`,
+      pills: hit ? [['agree', t('likeYou', { pct: fmtPct(hit.pct) })]] : [],
+      sr: `${roleName(r)}: ${candName(cand)}, ${partyName(cand)}${hit ? `, ${t('likeYouSr', { pct: fmtPct(hit.pct) })}` : ''}`,
     }));
   });
   prepareShare();
 }
 
-const fmtPct = (n) => `${Number(n).toLocaleString('he-IL', { maximumFractionDigits: 1 })}%`;
 
 function renderTabs() {
   const tabs = $('#tabs');
   tabs.replaceChildren();
-  const items = [{ id: '', name: 'כולם' }, ...(state.banned ? [] : state.parties)];
+  const items = [{ id: '', name: t('all') }, ...(state.banned ? [] : state.parties.map((p) => ({ ...p, name: partyLabel(p) })))];
   for (const p of items) {
     const t = el('button', { type: 'button', className: 'tab', id: `tab-${p.id || 'all'}` }, p.id ? el('span', { className: 'dot' }) : null, p.name);
     if (p.id) t.style.setProperty('--party', p.color);
@@ -721,7 +710,8 @@ function renderTabs() {
 }
 
 $('#tabs').addEventListener('keydown', (e) => {
-  const keys = { ArrowLeft: 1, ArrowRight: -1, Home: 'first', End: 'last' };
+  const fwd = dir() === 'rtl' ? 'ArrowLeft' : 'ArrowRight';
+  const keys = { [fwd]: 1, [fwd === 'ArrowLeft' ? 'ArrowRight' : 'ArrowLeft']: -1, Home: 'first', End: 'last' };
   if (!(e.key in keys)) return;
   e.preventDefault();
   const tabs = [...$('#tabs').children];
@@ -773,18 +763,19 @@ async function selectTab(party) {
     renderMajority(res);
   } catch (err) {
     if (seq !== tabSeq) return;
-    const retry = el('button', { type: 'button', className: 'btn btn-ghost' }, 'נסו שוב');
+    const retry = el('button', { type: 'button', className: 'btn btn-ghost' }, t('retry'));
     retry.addEventListener('click', () => selectTab(party));
-    list.replaceChildren(el('li', { className: 'empty-state' }, el('p', {}, err instanceof NetError ? MSG.network : MSG.load), retry));
+    list.replaceChildren(el('li', { className: 'empty-state' }, el('p', {}, err instanceof NetError ? t('network') : t('load')), retry));
   } finally {
     list.classList.remove('loading');
   }
 }
 
 function renderMajority(res) {
+  state.lastMajority = res;
   const list = $('#majority-list');
   list.replaceChildren();
-  $('#total').textContent = typeof res.total === 'number' ? `${res.total.toLocaleString('he-IL')} הצבעות` : '';
+  $('#total').textContent = typeof res.total === 'number' ? t('votes', { n: fmtNumber(res.total), count: res.total }) : '';
   const ties = new Set(res.ties || []);
   plenumRoles().forEach((r, i) => {
     const entries = res.byRole?.[r.id] || [];
@@ -793,26 +784,25 @@ function renderMajority(res) {
       .map((e) => ({ e, cand: state.candById.get(e.candidateId) }))
       .filter((x) => x.cand);
     if (!leaders.length) {
-      list.append(player(r, i, { sr: `${r.name}: אין עדיין הצבעות` }));
+      list.append(player(r, i, { sr: `${roleName(r)}: ${t('noVotes')}` }));
       return;
     }
     const pct = fmtPct(leaders[0].e.pct);
     const match = leaders.some((x) => state.picks[r.id] === x.cand.id);
-    const who = leaders.map((x) => `${x.cand.name}, ${partyName(x.cand)}`).join('; ');
+    const who = leaders.map((x) => `${candName(x.cand)}, ${partyName(x.cand)}`).join('; ');
     list.append(player(r, i, {
       cands: leaders.map((x) => x.cand),
       match,
-      pills: [...(leaders.length > 1 ? [['tie-pill', 'תיקו']] : []), ['pct', pct]],
-      sr: `${r.name}: ${leaders.length > 1 ? 'תיקו — ' : ''}${who}, ${pct}${match ? ', כמו הבחירה שלך' : ''}`,
+      pills: [...(leaders.length > 1 ? [['tie-pill', t('tie')]] : []), ['pct', pct]],
+      sr: `${roleName(r)}: ${leaders.length > 1 ? `${t('tie')} — ` : ''}${who}, ${pct}${match ? `, ${t('matchSr')}` : ''}`,
     }));
   });
 }
 
-const SHARE_TEXT = 'זו נבחרת החלומות שלי לממשלה הבאה. ושלך? בואו לבחור: ';
 const SHARE_NAME = 'nivheret-hachalomot.png';
 
 function prepareShare() {
-  const key = JSON.stringify(state.picks);
+  const key = `${getLang()}:${JSON.stringify(state.picks)}`;
   if (key === state.shareKey) return;
   state.shareKey = key;
   state.shareFile = null;
@@ -821,12 +811,14 @@ function prepareShare() {
   if (link.href.startsWith('blob:')) URL.revokeObjectURL(link.href);
   link.removeAttribute('href');
   state.shareReady = renderShareImage({
-    roles: state.roles,
     picks: state.picks,
     rows: ROWS,
-    short: SHORT,
+    labels: Object.fromEntries(state.roles.map((r) => [r.id, r.id === 'pm' ? roleName(r) : roleShort(r, SHORT[r.id])])),
+    texts: { title: t('imgTitle'), date: t('imgDate'), table: t('govTable') },
+    dir: dir(),
     host: location.host,
     helpers: {
+      name: candName,
       cand: (id) => state.candById.get(id),
       partyColor: (c) => state.partyById.get(c.partyId)?.color,
       textOn,
@@ -848,12 +840,12 @@ function offerDownload() {
 
 function shareFailed(err) {
   if (err?.name === 'AbortError') return;
-  toast(MSG.share);
+  toast(t('shareFailed'));
   offerDownload();
 }
 
 async function share() {
-  const text = SHARE_TEXT + location.origin + '/';
+  const text = t('shareText') + location.origin + '/';
   const file = state.shareFile || await state.shareReady;
   try {
     if (file && navigator.canShare?.({ files: [file] })) {
@@ -885,6 +877,46 @@ async function showResults(status) {
   await selectTab('');
 }
 
+function indexNames() {
+  for (const c of state.candidates) c._tw = getLang() === 'he' ? null : words(candName(c));
+}
+
+function applyStatic() {
+  const l = getLang();
+  document.documentElement.lang = l;
+  document.documentElement.dir = dir();
+  document.title = t('title');
+  for (const n of document.querySelectorAll('[data-i18n]')) n.textContent = t(n.dataset.i18n);
+  for (const n of document.querySelectorAll('[data-i18n-label]')) n.setAttribute('aria-label', t(n.dataset.i18nLabel));
+  for (const b of document.querySelectorAll('.lang-btn')) b.setAttribute('aria-pressed', String(b.dataset.lang === l));
+}
+
+async function changeLang(l) {
+  if (l === getLang()) return;
+  try {
+    await setLang(l);
+  } catch {
+    return toast(t('network'));
+  }
+  const url = new URL(location.href);
+  if (url.searchParams.has('lang')) {
+    url.searchParams.set('lang', l);
+    history.replaceState(history.state, '', url);
+  }
+  applyStatic();
+  if (!state.parties.length) return;
+  indexNames();
+  renderParties();
+  renderCabinet();
+  if (!$('#screen-results').hidden) {
+    renderMine();
+    renderTabs();
+    if (state.lastMajority) renderMajority(state.lastMajority);
+  }
+}
+
+for (const b of document.querySelectorAll('.lang-btn')) b.addEventListener('click', () => changeLang(b.dataset.lang));
+
 async function boot() {
   show('screen-loading');
   let data;
@@ -892,7 +924,7 @@ async function boot() {
   if (cands.status === 'fulfilled' && cands.value.status === 200) data = cands.value.body;
   if (!data) {
     const net = cands.status === 'rejected' && cands.reason instanceof NetError;
-    return fatal(net ? MSG.network : `${MSG.load} נסו שוב בעוד רגע.`, boot);
+    return fatal(net ? t('network') : t('loadRetry'), boot);
   }
   state.siteKey = data.turnstileSiteKey || null;
   state.suggestions = data.suggestions && typeof data.suggestions === 'object' ? data.suggestions : {};
@@ -901,6 +933,7 @@ async function boot() {
   state.candidates = (data.candidates || []).map((c) => ({ ...c, _w: words(c.name) }));
   state.partyById = new Map(state.parties.map((p) => [p.id, p]));
   state.candById = new Map(state.candidates.map((c) => [c.id, c]));
+  indexNames();
   const status = st.status === 'fulfilled' ? st.value : null;
   if (!status?.voted) restoreDraft();
   renderParties();
@@ -916,4 +949,8 @@ window.visualViewport?.addEventListener('resize', () => {
   for (const c of combos.values()) fitList(c);
 });
 
-boot();
+(async () => {
+  try { await setLang(initialLang()); } catch { await setLang('he'); }
+  applyStatic();
+  boot();
+})();

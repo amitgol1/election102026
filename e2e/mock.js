@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 const load = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 export const fixture = load('../test/fixtures/candidates.json');
 export const realData = () => load('../data/candidates.json');
+export const realSuggestions = () => load('../data/suggestions.json').roles;
+export const i18n = (l) => load(`../public/i18n/${l}.json`);
 
 export const roles = [
   ['pm', 'ראש הממשלה'], ['defense', 'שר הביטחון'], ['foreign', 'שר החוץ'], ['finance', 'שר האוצר'], ['justice', 'שר המשפטים'],

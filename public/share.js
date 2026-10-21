@@ -93,7 +93,7 @@ function avatar(ctx, cand, cx, cy, r, h) {
   font(ctx, 700, Math.round(r * 0.72));
   ctx.fillStyle = h.textOn(color);
   ctx.textBaseline = 'middle';
-  ctx.fillText(h.initials(cand.name), cx, cy + 2);
+  ctx.fillText(h.initials(h.name(cand)), cx, cy + 2);
   ctx.textBaseline = 'alphabetic';
 }
 
@@ -134,28 +134,27 @@ function bench(ctx, xRight, xLeft, y, sag) {
   ctx.beginPath(); ctx.moveTo(xRight, y - 8); ctx.quadraticCurveTo(mid, y - 8 + sag * 2, xLeft, y - 8); ctx.stroke();
 }
 
-export async function renderShareImage({ roles, picks, rows, short, host, helpers }) {
+export async function renderShareImage({ picks, rows, labels, texts, dir, host, helpers }) {
   await fontsReady();
   const canvas = document.createElement('canvas');
   canvas.width = W;
   canvas.height = H;
   const ctx = canvas.getContext('2d');
-  ctx.direction = 'rtl';
+  ctx.direction = dir;
   ctx.textAlign = 'center';
   background(ctx);
 
   font(ctx, 700, 64);
   ctx.fillStyle = C.navy;
-  ctx.fillText('נבחרת החלומות שלי', W / 2, 122);
+  ctx.fillText(texts.title, W / 2, 122);
   font(ctx, 500, 32);
   ctx.fillStyle = C.sub;
-  ctx.fillText('בחירות 27.10.2026', W / 2, 174);
+  ctx.fillText(texts.date, W / 2, 174);
 
-  const roleName = (id) => roles.find((r) => r.id === id)?.name || id;
   const cand = (id) => helpers.cand(picks[id]);
 
   const pm = cand('pm');
-  pill(ctx, short.pm || roleName('pm'), W / 2, 222, { bg: C.gold, fg: '#1d1300', size: 24 });
+  pill(ctx, labels.pm, W / 2, 222, { bg: C.gold, fg: '#1d1300', size: 24 });
   ctx.fillStyle = C.navy;
   ctx.beginPath();
   ctx.moveTo(W / 2 - 150, 372); ctx.lineTo(W / 2 + 150, 372); ctx.lineTo(W / 2 + 180, 424); ctx.lineTo(W / 2 - 180, 424);
@@ -164,9 +163,9 @@ export async function renderShareImage({ roles, picks, rows, short, host, helper
   ctx.fillRect(W / 2 - 150, 368, 300, 6);
   font(ctx, 700, 22);
   ctx.fillStyle = C.goldText;
-  ctx.fillText('שולחן הממשלה', W / 2, 412);
+  ctx.fillText(texts.table, W / 2, 412);
   if (pm) avatar(ctx, pm, W / 2, 322, 62, helpers);
-  if (pm) drawName(ctx, pm.name, W / 2, 470, 600, [40, 36, 32, 28], 700, 1);
+  if (pm) drawName(ctx, helpers.name(pm), W / 2, 470, 600, [40, 36, 32, 28], 700, 1);
 
   const spans = [14, 15, 16];
   const base = 590;
@@ -178,12 +177,12 @@ export async function renderShareImage({ roles, picks, rows, short, host, helper
     bench(ctx, xRight - 18, xRight - rowW + 18, cy + 34, 18);
     row.forEach((id, p) => {
       const c = cand(id);
-      const cx = xRight - seatW * (p + 0.5);
+      const cx = dir === 'rtl' ? xRight - seatW * (p + 0.5) : xRight - rowW + seatW * (p + 0.5);
       const y = cy + (p === 1 || p === 2 ? 18 : 0);
-      pill(ctx, short[id] || roleName(id), cx, y - 80, { bg: C.navy, fg: '#fff' });
+      pill(ctx, labels[id] || id, cx, y - 80, { bg: C.navy, fg: '#fff' });
       if (!c) return;
       avatar(ctx, c, cx, y, 48, helpers);
-      drawName(ctx, c.name, cx, y + 88, seatW - 18, [30, 28, 26, 24, 22], 500);
+      drawName(ctx, helpers.name(c), cx, y + 88, seatW - 18, [30, 28, 26, 24, 22], 500);
     });
   });
 

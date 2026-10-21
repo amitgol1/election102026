@@ -19,75 +19,84 @@
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <h1 class="brand">נבחרת החלומות <span class="brand-year">2026</span></h1>
-    <p class="brand-sub">הבחירות לכנסת · 27.10.2026</p>
+    <div class="brand-wrap">
+      <h1 class="brand"><span data-i18n="brand">נבחרת החלומות</span> <span class="brand-year">2026</span></h1>
+      <p class="brand-sub" data-i18n="brandSub">הבחירות לכנסת · 27.10.2026</p>
+    </div>
+    <div class="lang-switch" role="group" aria-label="שפה" data-i18n-label="langLabel">
+      <button type="button" class="lang-btn" data-lang="he" lang="he" aria-label="עברית" aria-pressed="true">עב</button>
+      <span class="lang-sep" aria-hidden="true">·</span>
+      <button type="button" class="lang-btn" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+      <span class="lang-sep" aria-hidden="true">·</span>
+      <button type="button" class="lang-btn" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+    </div>
   </div>
 </header>
 
 <main id="main">
   <section class="screen" id="screen-loading" aria-busy="true">
-    <div class="loader" role="status"><span class="spinner" aria-hidden="true"></span><span>טוען…</span></div>
+    <div class="loader" role="status"><span class="spinner" aria-hidden="true"></span><span data-i18n="loading">טוען…</span></div>
   </section>
 
   <section class="screen" id="screen-error" hidden>
     <div class="card error-card">
       <p id="fatal-msg" role="alert"></p>
-      <button type="button" class="btn btn-primary" id="retry">נסו שוב</button>
+      <button type="button" class="btn btn-primary" id="retry" data-i18n="retry">נסו שוב</button>
     </div>
   </section>
 
   <section class="screen" id="screen-party" hidden aria-labelledby="party-title">
     <div class="step-head">
-      <span class="step-num">שלב 1 מתוך 2</span>
-      <h2 id="party-title">למי אתם מצביעים?</h2>
-      <p class="muted">בחרו את המפלגה שלכם. הבחירה משמשת רק לפילוח התוצאות.</p>
+      <span class="step-num" data-i18n="step1">שלב 1 מתוך 2</span>
+      <h2 id="party-title" data-i18n="partyTitle">למי אתם מצביעים?</h2>
+      <p class="muted" data-i18n="partyDesc">בחרו את המפלגה שלכם. הבחירה משמשת רק לפילוח התוצאות.</p>
     </div>
     <div class="party-list" id="party-list" role="radiogroup" aria-labelledby="party-title"></div>
   </section>
 
   <section class="screen" id="screen-cabinet" hidden aria-labelledby="cabinet-title">
     <div class="step-head">
-      <button type="button" class="link-btn" id="back-party">→ שינוי מפלגה</button>
-      <span class="step-num">שלב 2 מתוך 2</span>
-      <h2 id="cabinet-title">הרכיבו את הממשלה שלכם</h2>
-      <p class="muted">הקלידו שם ובחרו מהרשימה. כל מועמד יכול לכהן בתפקיד אחד בלבד.</p>
+      <button type="button" class="link-btn" id="back-party" data-i18n="back">→ שינוי מפלגה</button>
+      <span class="step-num" data-i18n="step2">שלב 2 מתוך 2</span>
+      <h2 id="cabinet-title" data-i18n="cabinetTitle">הרכיבו את הממשלה שלכם</h2>
+      <p class="muted" data-i18n="cabinetDesc">הקלידו שם ובחרו מהרשימה. כל מועמד יכול לכהן בתפקיד אחד בלבד.</p>
     </div>
     <div class="progress" id="progress">
-      <div class="progress-label"><span>התקדמות</span><strong id="progress-text" aria-live="polite">0/13</strong></div>
+      <div class="progress-label"><span data-i18n="progress">התקדמות</span><strong id="progress-text" aria-live="polite">0/13</strong></div>
       <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
     </div>
     <form id="cabinet-form" novalidate>
       <ol class="roles" id="roles"></ol>
       <div id="captcha" class="turnstile"></div>
       <div class="submit-bar">
-        <button type="submit" class="btn btn-primary btn-block" id="submit" disabled>שליחת הנבחרת שלי</button>
+        <button type="submit" class="btn btn-primary btn-block" id="submit" disabled data-i18n="submit">שליחת הנבחרת שלי</button>
         <p class="submit-hint muted" id="submit-hint"></p>
       </div>
     </form>
   </section>
 
   <section class="screen" id="screen-results" hidden aria-labelledby="results-title">
-    <h2 id="results-title" class="visually-hidden">תוצאות</h2>
-    <p class="disclaimer" id="disclaimer">זהו אינו סקר מדעי. התוצאות מבוססות על הצבעות גולשים באתר, אינן מבוססות על שיטה סטטיסטית ואין להסיק מהן על דפוסי הצבעה.</p>
+    <h2 id="results-title" class="visually-hidden" data-i18n="results">תוצאות</h2>
+    <p class="disclaimer" id="disclaimer" data-i18n="disclaimer">זהו אינו סקר מדעי. התוצאות מבוססות על הצבעות גולשים באתר, אינן מבוססות על שיטה סטטיסטית ואין להסיק מהן על דפוסי הצבעה.</p>
 
     <section class="block" id="mine-block" aria-labelledby="mine-title">
-      <h3 id="mine-title">הנבחרת שלי</h3>
+      <h3 id="mine-title" data-i18n="mine">הנבחרת שלי</h3>
       <div class="plenum"><ol class="plenum-list" id="mine-list" aria-labelledby="mine-title"></ol></div>
       <div class="share-row">
-        <button type="button" class="btn btn-primary btn-block" id="share-btn">שתפו את הנבחרת שלי</button>
-        <a class="btn btn-ghost btn-block" id="share-download" download="nivheret-hachalomot.png" hidden>שמירת התמונה</a>
+        <button type="button" class="btn btn-primary btn-block" id="share-btn" data-i18n="share">שתפו את הנבחרת שלי</button>
+        <a class="btn btn-ghost btn-block" id="share-download" download="nivheret-hachalomot.png" hidden data-i18n="download">שמירת התמונה</a>
       </div>
     </section>
 
-    <aside class="ad-slot" id="ad-slot" aria-label="פרסומת"></aside>
+    <aside class="ad-slot" id="ad-slot" aria-label="פרסומת" data-i18n-label="ad"></aside>
 
     <section class="block" aria-labelledby="majority-title">
       <div class="block-head">
-        <h3 id="majority-title">נבחרת הרוב</h3>
+        <h3 id="majority-title" data-i18n="majority">נבחרת הרוב</h3>
         <span class="muted small" id="total"></span>
       </div>
-      <div class="tabs" id="tabs" role="tablist" aria-label="סינון לפי מפלגה"></div>
-      <p class="ban-note" id="ban-note" hidden>פילוח לפי מפלגות יחזור עם סגירת הקלפיות (27.10, 22:00)</p>
+      <div class="tabs" id="tabs" role="tablist" aria-label="סינון לפי מפלגה" data-i18n-label="tabsLabel"></div>
+      <p class="ban-note" id="ban-note" hidden data-i18n="banNote">פילוח לפי מפלגות יחזור עם סגירת הקלפיות (27.10, 22:00)</p>
       <div id="majority-panel" role="tabpanel" aria-live="polite">
         <div class="plenum"><ol class="plenum-list" id="majority-list" aria-labelledby="majority-title"></ol></div>
       </div>
