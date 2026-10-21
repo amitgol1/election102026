@@ -16,7 +16,7 @@ Mobile-first (iOS Safari, Android Chrome), Hebrew, RTL. Election: 2026-10-27.
 4. A returning voter (voterId already voted) goes straight to results.
 5. Share (results screen, under "הנבחרת שלי"): button "שתפו את הנבחרת שלי" builds a PNG of MY cabinet (plenum style, 1080x1350) client-side and opens the native share sheet with the image + text:
    "זו נבחרת החלומות שלי לממשלה הבאה. ושלך? בואו לבחור: <site URL>"
-   Fallbacks: no file-share support → share text+link only, plus "שמירת התמונה" download; no Web Share → WhatsApp link (wa.me/?text=) + download. Page has og:title/og:description for link previews.
+   Fallbacks: no file-share support → share text only (URL inside the text), plus "שמירת התמונה" download; no Web Share → WhatsApp link (wa.me/?text=) + download. Page has og:title/og:description for link previews.
 
 ## Roles (fixed order, ids)
 pm ראש הממשלה · defense שר הביטחון · foreign שר החוץ · finance שר האוצר · justice שר המשפטים · transport שר התחבורה · education שר החינוך · sports שר הספורט · economy שר הכלכלה · hasbara שר ההסברה · religion שר הדתות · culture שר התרבות · national_security השר לביטחון לאומי
