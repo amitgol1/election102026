@@ -1,0 +1,15 @@
+export const ROLES = [
+  { id: "pm", name: "ראש הממשלה" },
+  { id: "defense", name: "שר הביטחון" },
+  { id: "foreign", name: "שר החוץ" },
+  { id: "finance", name: "שר האוצר" },
+  { id: "justice", name: "שר המשפטים" },
+  { id: "transport", name: "שר התחבורה" },
+  { id: "education", name: "שר החינוך" },
+  { id: "sports", name: "שר הספורט" },
+  { id: "economy", name: "שר הכלכלה" },
+  { id: "hasbara", name: "שר ההסברה" },
+  { id: "religion", name: "שר הדתות" },
+  { id: "culture", name: "שר התרבות" },
+  { id: "national_security", name: "השר לביטחון לאומי" },
+];

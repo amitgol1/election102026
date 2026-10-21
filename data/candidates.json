@@ -1,0 +1,966 @@
+{
+  "_source": "https://www.gov.il/he/pages/candidates-lists-26 (fetched 2026-10-21); spelling: initial וו→ו in 4 names (ווינטר, ווליד, וויספיש, ווליבוביץ); names reordered to first+last, middle names dropped (except טלי גוטליב, known by her middle name); seats = rounded avg of 10 polls 12-19 Oct 2026",
+  "parties": [
+    {
+      "id": "yashar",
+      "name": "ישר! (איזנקוט)",
+      "letters": "דרך",
+      "seats": 22,
+      "color": "#0b7a75"
+    },
+    {
+      "id": "likud",
+      "name": "הליכוד",
+      "letters": "מחל",
+      "seats": 21,
+      "color": "#1f4e9c"
+    },
+    {
+      "id": "together",
+      "name": "ביחד (בנט)",
+      "letters": "רק",
+      "seats": 12,
+      "color": "#2b2d42"
+    },
+    {
+      "id": "dems",
+      "name": "הדמוקרטים",
+      "letters": "אמת",
+      "seats": 9,
+      "color": "#c8102e"
+    },
+    {
+      "id": "joint",
+      "name": "הרשימה המשותפת",
+      "letters": "ודם",
+      "seats": 8,
+      "color": "#2e7d32"
+    },
+    {
+      "id": "shas",
+      "name": "ש\"ס",
+      "letters": "שס",
+      "seats": 8,
+      "color": "#111111"
+    },
+    {
+      "id": "otzma",
+      "name": "עוצמה יהודית",
+      "letters": "ב",
+      "seats": 8,
+      "color": "#e65100"
+    },
+    {
+      "id": "utj",
+      "name": "יהדות התורה",
+      "letters": "ג",
+      "seats": 8,
+      "color": "#37474f"
+    },
+    {
+      "id": "yb",
+      "name": "ישראל ביתנו",
+      "letters": "ל",
+      "seats": 8,
+      "color": "#4a148c"
+    },
+    {
+      "id": "rzp",
+      "name": "הציונות הדתית וזהות",
+      "letters": "ט",
+      "seats": 7,
+      "color": "#6d4c41"
+    },
+    {
+      "id": "raam",
+      "name": "רע\"ם",
+      "letters": "עם",
+      "seats": 5,
+      "color": "#00695c"
+    },
+    {
+      "id": "reservists",
+      "name": "המילואימניקים והכלכלית",
+      "letters": "די",
+      "seats": 4,
+      "color": "#556b2f"
+    },
+    {
+      "id": "amcha",
+      "name": "עמך ישראל (וינטר)",
+      "letters": "ך",
+      "seats": 4,
+      "color": "#1565c0"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "yashar-1",
+      "partyId": "yashar",
+      "name": "גד איזנקוט",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "yashar-2",
+      "partyId": "yashar",
+      "name": "יורם כהן",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "yashar-3",
+      "partyId": "yashar",
+      "name": "אורית פרקש הכהן",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "yashar-4",
+      "partyId": "yashar",
+      "name": "עדי אלטשולר",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "yashar-5",
+      "partyId": "yashar",
+      "name": "מתן כהנא",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "yashar-6",
+      "partyId": "yashar",
+      "name": "יחיאל טרופר",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "yashar-7",
+      "partyId": "yashar",
+      "name": "שאול מרידור",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "yashar-8",
+      "partyId": "yashar",
+      "name": "תאיר איפרגן",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "yashar-9",
+      "partyId": "yashar",
+      "name": "אושרת גני גונן",
+      "slot": 9,
+      "photo": null
+    },
+    {
+      "id": "yashar-10",
+      "partyId": "yashar",
+      "name": "שירה שפירא",
+      "slot": 10,
+      "photo": null
+    },
+    {
+      "id": "yashar-11",
+      "partyId": "yashar",
+      "name": "גיטי הרוש",
+      "slot": 11,
+      "photo": null
+    },
+    {
+      "id": "yashar-12",
+      "partyId": "yashar",
+      "name": "אלעזר שטרן",
+      "slot": 12,
+      "photo": null
+    },
+    {
+      "id": "yashar-13",
+      "partyId": "yashar",
+      "name": "כמיל אבו רוקן",
+      "slot": 13,
+      "photo": null
+    },
+    {
+      "id": "yashar-14",
+      "partyId": "yashar",
+      "name": "דבורה בכר",
+      "slot": 14,
+      "photo": null
+    },
+    {
+      "id": "yashar-15",
+      "partyId": "yashar",
+      "name": "אלקס ריף",
+      "slot": 15,
+      "photo": null
+    },
+    {
+      "id": "yashar-16",
+      "partyId": "yashar",
+      "name": "ענבר יחזקאלי בליליוס",
+      "slot": 16,
+      "photo": null
+    },
+    {
+      "id": "yashar-17",
+      "partyId": "yashar",
+      "name": "רועי פולקמן",
+      "slot": 17,
+      "photo": null
+    },
+    {
+      "id": "yashar-18",
+      "partyId": "yashar",
+      "name": "ישראל זרי",
+      "slot": 18,
+      "photo": null
+    },
+    {
+      "id": "yashar-19",
+      "partyId": "yashar",
+      "name": "טל אוחנה",
+      "slot": 19,
+      "photo": null
+    },
+    {
+      "id": "yashar-20",
+      "partyId": "yashar",
+      "name": "אליסף פרץ",
+      "slot": 20,
+      "photo": null
+    },
+    {
+      "id": "yashar-21",
+      "partyId": "yashar",
+      "name": "יפה טבג'ה",
+      "slot": 21,
+      "photo": null
+    },
+    {
+      "id": "yashar-22",
+      "partyId": "yashar",
+      "name": "ניר חג'בי",
+      "slot": 22,
+      "photo": null
+    },
+    {
+      "id": "likud-1",
+      "partyId": "likud",
+      "name": "בנימין נתניהו",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "likud-2",
+      "partyId": "likud",
+      "name": "אליהו כהן",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "likud-3",
+      "partyId": "likud",
+      "name": "אמיר אוחנה",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "likud-4",
+      "partyId": "likud",
+      "name": "יריב לוין",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "likud-5",
+      "partyId": "likud",
+      "name": "מרים רגב",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "likud-6",
+      "partyId": "likud",
+      "name": "ישראל כץ",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "likud-7",
+      "partyId": "likud",
+      "name": "גדעון סער",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "likud-8",
+      "partyId": "likud",
+      "name": "אופיר כץ",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "likud-9",
+      "partyId": "likud",
+      "name": "טלי גואילי",
+      "slot": 9,
+      "photo": null
+    },
+    {
+      "id": "likud-10",
+      "partyId": "likud",
+      "name": "יואב קיש",
+      "slot": 10,
+      "photo": null
+    },
+    {
+      "id": "likud-11",
+      "partyId": "likud",
+      "name": "יעקב ברדוגו",
+      "slot": 11,
+      "photo": null
+    },
+    {
+      "id": "likud-12",
+      "partyId": "likud",
+      "name": "מכלוף זוהר",
+      "slot": 12,
+      "photo": null
+    },
+    {
+      "id": "likud-13",
+      "partyId": "likud",
+      "name": "אלמוג כהן",
+      "slot": 13,
+      "photo": null
+    },
+    {
+      "id": "likud-14",
+      "partyId": "likud",
+      "name": "עמיחי שיקלי",
+      "slot": 14,
+      "photo": null
+    },
+    {
+      "id": "likud-15",
+      "partyId": "likud",
+      "name": "אלישע מדן",
+      "slot": 15,
+      "photo": null
+    },
+    {
+      "id": "likud-16",
+      "partyId": "likud",
+      "name": "דוד פטר",
+      "slot": 16,
+      "photo": null
+    },
+    {
+      "id": "likud-17",
+      "partyId": "likud",
+      "name": "משה סעדה",
+      "slot": 17,
+      "photo": null
+    },
+    {
+      "id": "likud-18",
+      "partyId": "likud",
+      "name": "חיים כץ",
+      "slot": 18,
+      "photo": null
+    },
+    {
+      "id": "likud-19",
+      "partyId": "likud",
+      "name": "דוד אמסלם",
+      "slot": 19,
+      "photo": null
+    },
+    {
+      "id": "likud-20",
+      "partyId": "likud",
+      "name": "חוה עטייה",
+      "slot": 20,
+      "photo": null
+    },
+    {
+      "id": "likud-21",
+      "partyId": "likud",
+      "name": "בעז ביסמוט",
+      "slot": 21,
+      "photo": null
+    },
+    {
+      "id": "together-1",
+      "partyId": "together",
+      "name": "נפתלי בנט",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "together-2",
+      "partyId": "together",
+      "name": "יאיר לפיד",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "together-3",
+      "partyId": "together",
+      "name": "קרן טרנר",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "together-4",
+      "partyId": "together",
+      "name": "מירב בן ארי",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "together-5",
+      "partyId": "together",
+      "name": "לירן אבישר בן חורין",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "together-6",
+      "partyId": "together",
+      "name": "נעם תיבון",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "together-7",
+      "partyId": "together",
+      "name": "מיכל הירש נגרי",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "together-8",
+      "partyId": "together",
+      "name": "איתן גינזבורג",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "together-9",
+      "partyId": "together",
+      "name": "מירב כהן",
+      "slot": 9,
+      "photo": null
+    },
+    {
+      "id": "together-10",
+      "partyId": "together",
+      "name": "יונתן שלו",
+      "slot": 10,
+      "photo": null
+    },
+    {
+      "id": "together-11",
+      "partyId": "together",
+      "name": "ברוריה נעים ארמן",
+      "slot": 11,
+      "photo": null
+    },
+    {
+      "id": "together-12",
+      "partyId": "together",
+      "name": "רם בן ברק",
+      "slot": 12,
+      "photo": null
+    },
+    {
+      "id": "dems-1",
+      "partyId": "dems",
+      "name": "יאיר גולן",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "dems-2",
+      "partyId": "dems",
+      "name": "נעמה לזימי",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "dems-3",
+      "partyId": "dems",
+      "name": "גלעד קריב",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "dems-4",
+      "partyId": "dems",
+      "name": "אפרת רייטן מרום",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "dems-5",
+      "partyId": "dems",
+      "name": "יאיר פינק",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "dems-6",
+      "partyId": "dems",
+      "name": "גבריאלה לסקי שוץ",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "dems-7",
+      "partyId": "dems",
+      "name": "עמרי רונן",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "dems-8",
+      "partyId": "dems",
+      "name": "מיכל רוזין",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "dems-9",
+      "partyId": "dems",
+      "name": "משה רדמן",
+      "slot": 9,
+      "photo": null
+    },
+    {
+      "id": "joint-1",
+      "partyId": "joint",
+      "name": "יוסף ג'בארין",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "joint-2",
+      "partyId": "joint",
+      "name": "אחמד טיבי",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "joint-3",
+      "partyId": "joint",
+      "name": "פאתן גטאס",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "joint-4",
+      "partyId": "joint",
+      "name": "בכר עואודה",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "joint-5",
+      "partyId": "joint",
+      "name": "עופר כסיף",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "joint-6",
+      "partyId": "joint",
+      "name": "יוסף עטאונה",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "joint-7",
+      "partyId": "joint",
+      "name": "מהא כרכבי סבאח",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "joint-8",
+      "partyId": "joint",
+      "name": "אחמד דראושה",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "shas-1",
+      "partyId": "shas",
+      "name": "אריה דרעי",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "shas-2",
+      "partyId": "shas",
+      "name": "ינון אזולאי",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "shas-3",
+      "partyId": "shas",
+      "name": "מיכאל מלכיאלי",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "shas-4",
+      "partyId": "shas",
+      "name": "יואב בן צור",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "shas-5",
+      "partyId": "shas",
+      "name": "חיים ביטון",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "shas-6",
+      "partyId": "shas",
+      "name": "דרור עמוס",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "shas-7",
+      "partyId": "shas",
+      "name": "משה אבוטבול",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "shas-8",
+      "partyId": "shas",
+      "name": "אוריאל בוסו",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "otzma-1",
+      "partyId": "otzma",
+      "name": "איתמר בן גביר",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "otzma-2",
+      "partyId": "otzma",
+      "name": "טלי גוטליב",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "otzma-3",
+      "partyId": "otzma",
+      "name": "יצחק וסרלאוף",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "otzma-4",
+      "partyId": "otzma",
+      "name": "עמיחי אליהו",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "otzma-5",
+      "partyId": "otzma",
+      "name": "לימור סון הר-מלך",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "otzma-6",
+      "partyId": "otzma",
+      "name": "יצחק קרויזר",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "otzma-7",
+      "partyId": "otzma",
+      "name": "חנמאל דורפמן",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "otzma-8",
+      "partyId": "otzma",
+      "name": "צחי אליהו",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "utj-1",
+      "partyId": "utj",
+      "name": "יעקב אשר",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "utj-2",
+      "partyId": "utj",
+      "name": "יצחק גולדקנופ",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "utj-3",
+      "partyId": "utj",
+      "name": "יצחק פינדרוס",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "utj-4",
+      "partyId": "utj",
+      "name": "מאיר פרוש",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "utj-5",
+      "partyId": "utj",
+      "name": "משה רוזנטל",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "utj-6",
+      "partyId": "utj",
+      "name": "אלי שטארק",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "utj-7",
+      "partyId": "utj",
+      "name": "יהודה ויספיש",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "utj-8",
+      "partyId": "utj",
+      "name": "יואל טסלר",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "yb-1",
+      "partyId": "yb",
+      "name": "אביגדור ליברמן",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "yb-2",
+      "partyId": "yb",
+      "name": "רפאל בן שטרית",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "yb-3",
+      "partyId": "yb",
+      "name": "טליה לנקרי",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "yb-4",
+      "partyId": "yb",
+      "name": "עודד פורר",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "yb-5",
+      "partyId": "yb",
+      "name": "יוליה מלינובסקי קונין",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "yb-6",
+      "partyId": "yb",
+      "name": "שרון שרעבי",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "yb-7",
+      "partyId": "yb",
+      "name": "חמד עמאר",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "yb-8",
+      "partyId": "yb",
+      "name": "יבגני סובה",
+      "slot": 8,
+      "photo": null
+    },
+    {
+      "id": "rzp-1",
+      "partyId": "rzp",
+      "name": "בצלאל סמוטריץ'",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "rzp-2",
+      "partyId": "rzp",
+      "name": "משה פייגלין",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "rzp-3",
+      "partyId": "rzp",
+      "name": "אורית סטרוק",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "rzp-4",
+      "partyId": "rzp",
+      "name": "שמחה רוטמן",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "rzp-5",
+      "partyId": "rzp",
+      "name": "צבי מור",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "rzp-6",
+      "partyId": "rzp",
+      "name": "איתמר איתם",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "rzp-7",
+      "partyId": "rzp",
+      "name": "צבי סוכות",
+      "slot": 7,
+      "photo": null
+    },
+    {
+      "id": "raam-1",
+      "partyId": "raam",
+      "name": "מנסור עבאס",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "raam-2",
+      "partyId": "raam",
+      "name": "יואב סגלוביץ",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "raam-3",
+      "partyId": "raam",
+      "name": "וליד טאהא",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "raam-4",
+      "partyId": "raam",
+      "name": "ואליד אל הואשלה",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "raam-5",
+      "partyId": "raam",
+      "name": "אימאן ח'טיב יאסין",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "reservists-1",
+      "partyId": "reservists",
+      "name": "יועז הנדל",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "reservists-2",
+      "partyId": "reservists",
+      "name": "ירון זליכה",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "reservists-3",
+      "partyId": "reservists",
+      "name": "עינת וילף",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "reservists-4",
+      "partyId": "reservists",
+      "name": "חביב וליבוביץ",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "amcha-1",
+      "partyId": "amcha",
+      "name": "עופר וינטר",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "amcha-2",
+      "partyId": "amcha",
+      "name": "יוסף חדאד",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "amcha-3",
+      "partyId": "amcha",
+      "name": "נטעלי שם טוב",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "amcha-4",
+      "partyId": "amcha",
+      "name": "ערן בן ארי",
+      "slot": 4,
+      "photo": null
+    }
+  ]
+}

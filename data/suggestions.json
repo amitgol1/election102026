@@ -1,0 +1,108 @@
+{
+  "_source": "Hebrew/English Wikipedia articles fetched 2026-10-21; tier A = held portfolio or top-level professional, B = deputy/minister-in-ministry/DG/committee chair/acting <6mo, C = other professional; one party per role where possible; pm = list leaders by seats; ledger in docs/suggestions-sources.md",
+  "roles": {
+    "pm": [
+      { "candidateId": "yashar-1", "reason": "יו\"ר ישר!, רמטכ\"ל לשעבר" },
+      { "candidateId": "likud-1", "reason": "יו\"ר הליכוד, רה\"מ המכהן" },
+      { "candidateId": "together-1", "reason": "יו\"ר ביחד, רה\"מ לשעבר" },
+      { "candidateId": "dems-1", "reason": "יו\"ר הדמוקרטים" },
+      { "candidateId": "joint-1", "reason": "יו\"ר הרשימה המשותפת" },
+      { "candidateId": "shas-1", "reason": "יו\"ר ש\"ס, שר הפנים לשעבר" }
+    ],
+    "defense": [
+      { "candidateId": "likud-6", "reason": "שר הביטחון המכהן" },
+      { "candidateId": "yashar-1", "reason": "רמטכ\"ל לשעבר" },
+      { "candidateId": "yb-1", "reason": "שר הביטחון לשעבר" },
+      { "candidateId": "dems-1", "reason": "סגן הרמטכ\"ל לשעבר" },
+      { "candidateId": "together-1", "reason": "שר הביטחון לשעבר" },
+      { "candidateId": "amcha-1", "reason": "תת-אלוף, מפקד אוגדה לשעבר" }
+    ],
+    "foreign": [
+      { "candidateId": "likud-7", "reason": "שר החוץ המכהן" },
+      { "candidateId": "yb-1", "reason": "שר החוץ לשעבר" },
+      { "candidateId": "together-2", "reason": "שר החוץ לשעבר" },
+      { "candidateId": "yashar-13", "reason": "לשעבר סגן מנהל במשרד החוץ" },
+      { "candidateId": "likud-1", "reason": "שר החוץ לשעבר" },
+      { "candidateId": "likud-6", "reason": "שר החוץ לשעבר" }
+    ],
+    "finance": [
+      { "candidateId": "rzp-1", "reason": "שר האוצר המכהן" },
+      { "candidateId": "reservists-2", "reason": "החשב הכללי לשעבר" },
+      { "candidateId": "yashar-7", "reason": "ראש אגף התקציבים לשעבר" },
+      { "candidateId": "likud-1", "reason": "שר האוצר לשעבר" },
+      { "candidateId": "together-2", "reason": "שר האוצר לשעבר" },
+      { "candidateId": "yb-1", "reason": "שר האוצר לשעבר" }
+    ],
+    "justice": [
+      { "candidateId": "likud-4", "reason": "שר המשפטים המכהן" },
+      { "candidateId": "rzp-4", "reason": "יו\"ר ועדת החוקה המכהן" },
+      { "candidateId": "dems-3", "reason": "יו\"ר ועדת החוקה לשעבר" },
+      { "candidateId": "utj-1", "reason": "יו\"ר ועדת החוקה לשעבר" },
+      { "candidateId": "joint-1", "reason": "דוקטור למשפטים, איש אקדמיה" },
+      { "candidateId": "likud-7", "reason": "שר המשפטים לשעבר" }
+    ],
+    "transport": [
+      { "candidateId": "likud-5", "reason": "שרת התחבורה המכהנת" },
+      { "candidateId": "yb-1", "reason": "שר התחבורה לשעבר" },
+      { "candidateId": "rzp-1", "reason": "שר התחבורה לשעבר" },
+      { "candidateId": "together-3", "reason": "מנכ\"לית משרד התחבורה לשעבר" },
+      { "candidateId": "likud-6", "reason": "שר התחבורה לשעבר" }
+    ],
+    "education": [
+      { "candidateId": "likud-10", "reason": "שר החינוך המכהן" },
+      { "candidateId": "together-1", "reason": "שר החינוך לשעבר" },
+      { "candidateId": "rzp-7", "reason": "יו\"ר ועדת החינוך המכהן" },
+      { "candidateId": "shas-5", "reason": "שר במשרד החינוך לשעבר" },
+      { "candidateId": "utj-4", "reason": "סגן שר החינוך לשעבר" },
+      { "candidateId": "reservists-3", "reason": "יו\"ר ועדת החינוך לשעבר" }
+    ],
+    "sports": [
+      { "candidateId": "likud-12", "reason": "שר התרבות והספורט המכהן" },
+      { "candidateId": "yashar-6", "reason": "שר התרבות והספורט לשעבר" },
+      { "candidateId": "rzp-7", "reason": "יו\"ר ועדת החינוך המכהן" },
+      { "candidateId": "reservists-3", "reason": "יו\"ר ועדת החינוך לשעבר" },
+      { "candidateId": "yb-4", "reason": "יו\"ר ועדת המשנה לספורט לשעבר" },
+      { "candidateId": "raam-4", "reason": "שופט כדורגל לשעבר" }
+    ],
+    "culture": [
+      { "candidateId": "likud-12", "reason": "שר התרבות והספורט המכהן" },
+      { "candidateId": "yashar-6", "reason": "שר התרבות והספורט לשעבר" },
+      { "candidateId": "rzp-7", "reason": "יו\"ר ועדת החינוך המכהן" },
+      { "candidateId": "reservists-3", "reason": "יו\"ר ועדת החינוך לשעבר" },
+      { "candidateId": "dems-2", "reason": "נבחרה ליו\"ר מוזאוני חיפה" },
+      { "candidateId": "yb-4", "reason": "מזכיר מועצת התרבות לשעבר" }
+    ],
+    "economy": [
+      { "candidateId": "reservists-2", "reason": "החשב הכללי לשעבר, כלכלן" },
+      { "candidateId": "likud-2", "reason": "שר הכלכלה לשעבר" },
+      { "candidateId": "yashar-7", "reason": "ראש אגף התקציבים לשעבר" },
+      { "candidateId": "together-1", "reason": "שר הכלכלה לשעבר" },
+      { "candidateId": "shas-1", "reason": "שר הכלכלה לשעבר" },
+      { "candidateId": "dems-1", "reason": "סגן שרת הכלכלה לשעבר" }
+    ],
+    "hasbara": [
+      { "candidateId": "likud-5", "reason": "דוברת צה\"ל לשעבר" },
+      { "candidateId": "reservists-1", "reason": "ראש מערך ההסברה הלאומי לשעבר" },
+      { "candidateId": "together-9", "reason": "דוברת כלכלית של רה\"מ לשעבר" },
+      { "candidateId": "amcha-2", "reason": "פעיל הסברה, שדרן לשעבר" },
+      { "candidateId": "yashar-18", "reason": "דובר עיריית רעננה לשעבר" },
+      { "candidateId": "yb-8", "reason": "עיתונאי ומגיש אקטואליה לשעבר" }
+    ],
+    "religion": [
+      { "candidateId": "likud-4", "reason": "השר לשירותי דת" },
+      { "candidateId": "shas-3", "reason": "השר לשירותי דת לשעבר" },
+      { "candidateId": "together-1", "reason": "השר לשירותי דת לשעבר" },
+      { "candidateId": "yashar-5", "reason": "השר לשירותי דת לשעבר" },
+      { "candidateId": "yb-5", "reason": "יו\"ר ועדת שירותי דת לשעבר" },
+      { "candidateId": "dems-3", "reason": "רב מוסמך (התנועה הרפורמית)" }
+    ],
+    "national_security": [
+      { "candidateId": "otzma-1", "reason": "השר לביטחון לאומי המכהן" },
+      { "candidateId": "yashar-2", "reason": "ראש השב\"כ לשעבר" },
+      { "candidateId": "likud-3", "reason": "השר לביטחון הפנים לשעבר" },
+      { "candidateId": "raam-2", "reason": "סגן השר לביטחון הפנים לשעבר" },
+      { "candidateId": "together-4", "reason": "יו\"ר ועדת ביטחון הפנים לשעבר" },
+      { "candidateId": "likud-21", "reason": "יו\"ר ועדת ביטחון לאומי לשעבר" }
+    ]
+  }
+}

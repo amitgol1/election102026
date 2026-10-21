@@ -1,0 +1,15 @@
+{
+  "name": "election102026",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "election", "database_id": "8df16345-75d9-4f56-9585-0ae8e5e9217e", "migrations_dir": "migrations" }
+  ],
+  "vars": {
+    "BAN_START": "2026-10-22T21:00:00Z",
+    "BAN_END": "2026-10-27T20:00:00Z",
+    "IP_DAILY_LIMIT": "200",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFeuuUkOskx3jdTU"
+  }
+}

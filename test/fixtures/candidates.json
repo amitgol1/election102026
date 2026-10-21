@@ -1,0 +1,140 @@
+{
+  "_fixture": "FAKE NAMES — test/dev only",
+  "parties": [
+    {
+      "id": "likud",
+      "name": "הליכוד",
+      "letters": "מחל",
+      "seats": 6,
+      "color": "#1f4e9c"
+    },
+    {
+      "id": "yashar",
+      "name": "ישר",
+      "letters": "יש",
+      "seats": 6,
+      "color": "#0b7a75"
+    },
+    {
+      "id": "dems",
+      "name": "הדמוקרטים",
+      "letters": "אמת",
+      "seats": 4,
+      "color": "#c8102e"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "likud-1",
+      "partyId": "likud",
+      "name": "אבי כהן",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "likud-2",
+      "partyId": "likud",
+      "name": "בתיה לוי",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "likud-3",
+      "partyId": "likud",
+      "name": "גדי מזרחי",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "likud-4",
+      "partyId": "likud",
+      "name": "דנה פרץ",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "likud-5",
+      "partyId": "likud",
+      "name": "הדס ביטון",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "likud-6",
+      "partyId": "likud",
+      "name": "ורד דהן",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "yashar-1",
+      "partyId": "yashar",
+      "name": "זיו אברהם",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "yashar-2",
+      "partyId": "yashar",
+      "name": "חנה פרידמן",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "yashar-3",
+      "partyId": "yashar",
+      "name": "טל אזולאי",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "yashar-4",
+      "partyId": "yashar",
+      "name": "יעל מלכה",
+      "slot": 4,
+      "photo": null
+    },
+    {
+      "id": "yashar-5",
+      "partyId": "yashar",
+      "name": "כרמל חדד",
+      "slot": 5,
+      "photo": null
+    },
+    {
+      "id": "yashar-6",
+      "partyId": "yashar",
+      "name": "לירון גבאי",
+      "slot": 6,
+      "photo": null
+    },
+    {
+      "id": "dems-1",
+      "partyId": "dems",
+      "name": "מיכל קליין",
+      "slot": 1,
+      "photo": null
+    },
+    {
+      "id": "dems-2",
+      "partyId": "dems",
+      "name": "נועם שפירא",
+      "slot": 2,
+      "photo": null
+    },
+    {
+      "id": "dems-3",
+      "partyId": "dems",
+      "name": "סהר עמר",
+      "slot": 3,
+      "photo": null
+    },
+    {
+      "id": "dems-4",
+      "partyId": "dems",
+      "name": "עדי יוסף",
+      "slot": 4,
+      "photo": null
+    }
+  ]
+}
